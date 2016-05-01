@@ -4,9 +4,113 @@
   <title>MetaCoin - Default Truffle App</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href="./app.css" rel='stylesheet' type='text/css'>
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- MaterializeCSS -->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
   <script src="./app.js"></script>
 </head>
 <body>
+  <div class="container">
+    <h1>SmartAirbnb</h1>
+    <h2 id="step1">Choose a room</h2>
+    <div class="row">
+      <div class="col s6 m4">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/image1.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Sokhna's guest room<i class="material-icons right">more_vert</i></span>
+            <p>
+              <button class="reserve waves-effect waves-light btn" onclick="reserve()">Choose</button>
+            </p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Sokhna's guest room<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s6 m4">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/image2.jpg">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Peiyi's guest room<i class="material-icons right">more_vert</i></span>
+            <p>
+              <button class="reserve waves-effect waves-light btn" onclick="reserve()">Choose</button>
+            </p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Peiyi's guest room<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="step2">Choose guarantee option</h2>
+    <form id="form-premium" action="#">
+      <p>
+        <input type="checkbox" id="test5" />
+        <label for="test5">Hi-Speed Wifi</label>
+      </p>
+      <p>
+        <input type="checkbox" id="test6" checked="checked" />
+        <label for="test6">No Bugs</label>
+      </p>
+      <p>
+        <input type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
+        <label for="filled-in-box">Filled in</label>
+      </p>
+      <p>
+        <input type="checkbox" id="test7" checked="checked" disabled="disabled" />
+        <label for="test7">Green</label>
+      </p>
+        <p>
+          <input type="checkbox" id="test8" disabled="disabled" />
+          <label for="test8">Brown</label>
+      </p>
+      <p>
+        <button class="waves-effect waves-light btn" onclick="addPremium()">Choose</button>
+      </p>
+    </form>
+
+    <h2 id="step3">Reservation confirmed!</h2>
+      <p>
+        <button class="step4 waves-effect waves-light btn" onclick="moveScreen('#step4')">Choose</button>
+      </p>
+
+    <h2 id="step4">Report the problem</h2>
+
+    <p>
+      <button class="noWifi waves-effect waves-light btn" onclick="noWifi()">Report</button>
+    </p>
+
+    <h2 id="step5">LeaveRoom</h2>
+
+    <p>
+      <button class="leaveRoom waves-effect waves-light btn" onclick="leaveRoom()">Finish the contract</button>
+    </p>
+
+  </div>
+
+
+
+
+
+
+  <div class="section">
+    Contract deployed at: <div id="confAddress"></div>
+  </div>
+
+
+
+
   <h1>MetaCoin</h1>
   <h2>Example Truffle Dapp</h2>
   <h3>You have <span class="black"><span id="balance"></span> META</span></h3>

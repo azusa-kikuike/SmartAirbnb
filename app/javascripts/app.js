@@ -2,6 +2,31 @@ var accounts;
 var account;
 var balance;
 
+function moveScreen(step) {
+  // TODO integrate the contract
+  var p = $(step).offset().top;
+  $('html,body').animate({ scrollTop: p }, 'slow');
+  return false;
+};
+
+function reserve() {
+  // TODO integrate the contract
+  moveScreen("#step2");
+};
+
+function addPremium() {
+  // TODO integrate the contract
+  moveScreen("#step3");
+};
+
+function noWifi() {
+  moveScreen("#step5");
+};
+
+function leaveRoom() {
+  return false;
+};
+
 function setStatus(message) {
   var status = document.getElementById("status");
   status.innerHTML = message;
@@ -37,6 +62,9 @@ function sendCoin() {
 };
 
 window.onload = function() {
+  var airb = SmartAirbnb.at(SmartAirbnb.deployed_address);
+  $("#confAddress").html(SmartAirbnb.deployed_address);
+
   web3.eth.getAccounts(function(err, accs) {
     if (err != null) {
       alert("There was an error fetching your accounts.");
@@ -52,5 +80,10 @@ window.onload = function() {
     account = accounts[0];
 
     refreshBalance();
+  });
+
+
+  $('form').on('submit', function(e){
+    e.preventDefault();
   });
 }
