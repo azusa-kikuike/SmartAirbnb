@@ -4,28 +4,31 @@ contract SmartAirbnb is MetaCoin {
     uint public price;
     uint public premium;
     address public guest;
+    address public platform;
     address public host;
     uint public deposit;
     uint public kickback;
-    address metacoin;
 
-    function SmartAirbnb() {
-        address public platform;
+    function AddPlatform() {
+        platform = msg.sender;
+    }
+    function AddHost() {
+        host = msg.sender;
     }
 
     function Reserve(uint amount) {
         guest = msg.sender;
         price = amount;
+        deposit = price + premium;
 
-//        metacoin.sendCoin(platform, amount);
         sendCoin(platform, amount);
     }
     
     function AddPremium(uint amount) {
         guest = msg.sender;
         premium = amount;
+        deposit = price + premium;
 
-//        metacoin.sendCoin(platform, amount);
         sendCoin(platform, amount);
     }
 
@@ -43,8 +46,6 @@ contract SmartAirbnb is MetaCoin {
         if (kickback + deposit == getBalance(platform)) {
             sendCoin(host, deposit);
             sendCoin(guest, kickback);
-//            metacoin.sendCoin(host, deposit);
-//            metacoin.sendCoin(guest, kickback);
         } else {
             throw;
         }

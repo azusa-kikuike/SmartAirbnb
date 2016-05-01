@@ -10,9 +10,11 @@ contract('SmartAirbnb', function(accounts) {
 
     airb.getBalance.call(guest).then(function(balance) {
       assert.equal(balance.valueOf(), 10000, "10000 wasn't in the first account");
+      airb.AddPlatform({from: platform});
+      airb.AddHost({from: host});
     })
     .then(function() {
-      airb.Reserve(price, {from: guest, to: platform});
+      airb.Reserve(price, {from: guest});
     })
     .then(function() {
       return airb.getBalance.call(guest);
@@ -25,10 +27,9 @@ contract('SmartAirbnb', function(accounts) {
       return airb.getBalance.call(platform);
     })
     .then(function(balance) {
-      var expected = price + premium;
+      var expected = price;
       assert.equal(expected, balance.valueOf(), "Reservation error");
     })
-/*
     .then(function() {
       airb.AddPremium(premium, {from: guest});
     })
@@ -56,7 +57,6 @@ contract('SmartAirbnb', function(accounts) {
       var expected = price + premium;
       assert.equal(balance.valueOf(), expected, "DistributingMoney error");
     })
-*/
     .then(done).catch(done);
   });
 
