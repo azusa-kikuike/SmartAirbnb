@@ -5735,77 +5735,10 @@ var Pudding =
 (function() {
 
   var contract_data = {
-    abi: [{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalanceInEth","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"receiver","type":"address"},{"name":"amount","type":"uint256"}],"name":"sendCoin","outputs":[{"name":"sufficient","type":"bool"}],"type":"function"},{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalance","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"inputs":[],"type":"constructor"}],
-    binary: "6060604052600160a060020a033216600090815260208190526040902061271090556101408061002f6000396000f3606060405260e060020a60003504637bd703e8811461003157806390b98a111461005c578063f8b2cb4f1461008b575b005b6100b16004356000732e0dd9d18f8edf4e8236fb4d73b241bd6e40ac086396e4ee3d6100fb84610092565b6100b160043560243533600160a060020a0316600090815260208190526040812054829010156100c3576100f5565b6100b16004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506100ac905056",
-    unlinked_binary: "6060604052600160a060020a033216600090815260208190526040902061271090556101408061002f6000396000f3606060405260e060020a60003504637bd703e8811461003157806390b98a111461005c578063f8b2cb4f1461008b575b005b6100b1600435600073__ConvertLib____________________________6396e4ee3d6100fb84610092565b6100b160043560243533600160a060020a0316600090815260208190526040812054829010156100c3576100f5565b6100b16004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506100ac905056",
-    address: "0x976dd1388120cf11eeeedcaa0ccc66e4c820bf48",
-    generated_with: "2.0.6",
-    contract_name: "MetaCoin"
-  };
-
-  function Contract() {
-    if (Contract.Pudding == null) {
-      throw new Error("MetaCoin error: Please call load() first before creating new instance of this contract.");
-    }
-
-    Contract.Pudding.apply(this, arguments);
-  };
-
-  Contract.load = function(Pudding) {
-    Contract.Pudding = Pudding;
-
-    Pudding.whisk(contract_data, Contract);
-
-    // Return itself for backwards compatibility.
-    return Contract;
-  }
-
-  Contract.new = function() {
-    if (Contract.Pudding == null) {
-      throw new Error("MetaCoin error: Please call load() first before calling new().");
-    }
-
-    return Contract.Pudding.new.apply(Contract, arguments);
-  };
-
-  Contract.at = function() {
-    if (Contract.Pudding == null) {
-      throw new Error("MetaCoin error: lease call load() first before calling at().");
-    }
-
-    return Contract.Pudding.at.apply(Contract, arguments);
-  };
-
-  Contract.deployed = function() {
-    if (Contract.Pudding == null) {
-      throw new Error("MetaCoin error: Please call load() first before calling deployed().");
-    }
-
-    return Contract.Pudding.deployed.apply(Contract, arguments);
-  };
-
-  if (typeof module != "undefined" && typeof module.exports != "undefined") {
-    module.exports = Contract;
-  } else {
-    // There will only be one version of Pudding in the browser,
-    // and we can use that.
-    window.MetaCoin = Contract;
-  }
-
-})();
-;
-
-// Factory "morphs" into a Pudding class.
-// The reasoning is that calling load in each context
-// is cumbersome.
-
-(function() {
-
-  var contract_data = {
     abi: [{"constant":false,"inputs":[{"name":"amount","type":"uint256"},{"name":"conversionRate","type":"uint256"}],"name":"convert","outputs":[{"name":"convertedAmount","type":"uint256"}],"type":"function"}],
     binary: "606060405260358060106000396000f3650301c67926cf50606060405260e060020a600035046396e4ee3d81146024575b6007565b602435600435026060908152602090f3",
     unlinked_binary: "606060405260358060106000396000f3650301c67926cf50606060405260e060020a600035046396e4ee3d81146024575b6007565b602435600435026060908152602090f3",
-    address: "0x2e0dd9d18f8edf4e8236fb4d73b241bd6e40ac08",
+    address: "0xd32ec6dc3d4c69f80e3cdcd59cd5b93ba3505628",
     generated_with: "2.0.6",
     contract_name: "ConvertLib"
   };
@@ -5869,10 +5802,77 @@ var Pudding =
 (function() {
 
   var contract_data = {
-    abi: [{"constant":true,"inputs":[],"name":"kickback","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"platform","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"AddPremium","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"FindBug","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalanceInEth","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"AddPlatform","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"receiver","type":"address"},{"name":"amount","type":"uint256"}],"name":"sendCoin","outputs":[{"name":"sufficient","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"guest","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"price","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"NoWifi","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"deposit","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"Reserve","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"premium","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"host","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"LeaveRoom","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalance","outputs":[{"name":"","type":"uint256"}],"type":"function"}],
-    binary: "6060604052600160a060020a033216600090815260208190526040902061271090556103878061002f6000396000f3606060405236156100c45760e060020a600035046349eb2e6681146100c65780634bde38c8146100cf5780636cf84fe1146100e15780637502bd93146101145780637bd703e81461013b5780637f5097021461016657806390b98a111461017e5780639a04f704146101ae578063a035b1fe146101c0578063aff0cb3c146101c9578063d0e30db0146101f4578063db7b64a8146101fd578063e0a73a9314610230578063f437bc5914610239578063f6ef7c091461024b578063f8b2cb4f14610263575b005b61028960075481565b61029b600454600160a060020a031681565b6100c460043560038054600160a060020a03191633179055600281905560045461033590600160a060020a031682610188565b6100c460028054600154600780549190920192909204918201905560068054919091039055565b6102896004356000732e0dd9d18f8edf4e8236fb4d73b241bd6e40ac086396e4ee3d6102f08461026a565b6100c460048054600160a060020a031916331790555b565b6102896004356024355b33600160a060020a0316600090815260208190526040812054829010156102b8576102ea565b61029b600354600160a060020a031681565b61028960015481565b6100c460025460015460078054600a9290930160030291909104918201905560068054919091039055565b61028960065481565b6100c460043560038054600160a060020a03191633179055600181905560045461033590600160a060020a031682610188565b61028960025481565b61029b600554600160a060020a031681565b6100c460045461033990600160a060020a031661026a565b6102896004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b60408051600160a060020a03929092168252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506102849050565b5050565b6006546007540114156103625760065460055461036791600160a060020a039190911690610188565b610002565b5060035460075461038191600160a060020a031690610188565b5061017c56",
-    unlinked_binary: "6060604052600160a060020a033216600090815260208190526040902061271090556103878061002f6000396000f3606060405236156100c45760e060020a600035046349eb2e6681146100c65780634bde38c8146100cf5780636cf84fe1146100e15780637502bd93146101145780637bd703e81461013b5780637f5097021461016657806390b98a111461017e5780639a04f704146101ae578063a035b1fe146101c0578063aff0cb3c146101c9578063d0e30db0146101f4578063db7b64a8146101fd578063e0a73a9314610230578063f437bc5914610239578063f6ef7c091461024b578063f8b2cb4f14610263575b005b61028960075481565b61029b600454600160a060020a031681565b6100c460043560038054600160a060020a03191633179055600281905560045461033590600160a060020a031682610188565b6100c460028054600154600780549190920192909204918201905560068054919091039055565b610289600435600073__ConvertLib____________________________6396e4ee3d6102f08461026a565b6100c460048054600160a060020a031916331790555b565b6102896004356024355b33600160a060020a0316600090815260208190526040812054829010156102b8576102ea565b61029b600354600160a060020a031681565b61028960015481565b6100c460025460015460078054600a9290930160030291909104918201905560068054919091039055565b61028960065481565b6100c460043560038054600160a060020a03191633179055600181905560045461033590600160a060020a031682610188565b61028960025481565b61029b600554600160a060020a031681565b6100c460045461033990600160a060020a031661026a565b6102896004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b60408051600160a060020a03929092168252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506102849050565b5050565b6006546007540114156103625760065460055461036791600160a060020a039190911690610188565b610002565b5060035460075461038191600160a060020a031690610188565b5061017c56",
-    address: "0x8547c5719d9db06e72dca7f15939e51101e2d96c",
+    abi: [{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalanceInEth","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"receiver","type":"address"},{"name":"amount","type":"uint256"}],"name":"sendCoin","outputs":[{"name":"sufficient","type":"bool"}],"type":"function"},{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalance","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"inputs":[],"type":"constructor"}],
+    binary: "6060604052600160a060020a033216600090815260208190526040902061271090556101408061002f6000396000f3606060405260e060020a60003504637bd703e8811461003157806390b98a111461005c578063f8b2cb4f1461008b575b005b6100b1600435600073d32ec6dc3d4c69f80e3cdcd59cd5b93ba35056286396e4ee3d6100fb84610092565b6100b160043560243533600160a060020a0316600090815260208190526040812054829010156100c3576100f5565b6100b16004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506100ac905056",
+    unlinked_binary: "6060604052600160a060020a033216600090815260208190526040902061271090556101408061002f6000396000f3606060405260e060020a60003504637bd703e8811461003157806390b98a111461005c578063f8b2cb4f1461008b575b005b6100b1600435600073__ConvertLib____________________________6396e4ee3d6100fb84610092565b6100b160043560243533600160a060020a0316600090815260208190526040812054829010156100c3576100f5565b6100b16004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506100ac905056",
+    address: "0x748a09aed07d40af364d489462fcdce51c3d6d6f",
+    generated_with: "2.0.6",
+    contract_name: "MetaCoin"
+  };
+
+  function Contract() {
+    if (Contract.Pudding == null) {
+      throw new Error("MetaCoin error: Please call load() first before creating new instance of this contract.");
+    }
+
+    Contract.Pudding.apply(this, arguments);
+  };
+
+  Contract.load = function(Pudding) {
+    Contract.Pudding = Pudding;
+
+    Pudding.whisk(contract_data, Contract);
+
+    // Return itself for backwards compatibility.
+    return Contract;
+  }
+
+  Contract.new = function() {
+    if (Contract.Pudding == null) {
+      throw new Error("MetaCoin error: Please call load() first before calling new().");
+    }
+
+    return Contract.Pudding.new.apply(Contract, arguments);
+  };
+
+  Contract.at = function() {
+    if (Contract.Pudding == null) {
+      throw new Error("MetaCoin error: lease call load() first before calling at().");
+    }
+
+    return Contract.Pudding.at.apply(Contract, arguments);
+  };
+
+  Contract.deployed = function() {
+    if (Contract.Pudding == null) {
+      throw new Error("MetaCoin error: Please call load() first before calling deployed().");
+    }
+
+    return Contract.Pudding.deployed.apply(Contract, arguments);
+  };
+
+  if (typeof module != "undefined" && typeof module.exports != "undefined") {
+    module.exports = Contract;
+  } else {
+    // There will only be one version of Pudding in the browser,
+    // and we can use that.
+    window.MetaCoin = Contract;
+  }
+
+})();
+;
+
+// Factory "morphs" into a Pudding class.
+// The reasoning is that calling load in each context
+// is cumbersome.
+
+(function() {
+
+  var contract_data = {
+    abi: [{"constant":true,"inputs":[],"name":"kickback","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"platform","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"AddPremium","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"FindBug","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalanceInEth","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"AddPlatform","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"receiver","type":"address"},{"name":"amount","type":"uint256"}],"name":"sendCoin","outputs":[{"name":"sufficient","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"guest","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"price","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"NoWifi","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"AddHost","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"deposit","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"Reserve","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"premium","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"host","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"LeaveRoom","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalance","outputs":[{"name":"","type":"uint256"}],"type":"function"}],
+    binary: "6060604052600160a060020a033216600090815260208190526040902061271090556103b98061002f6000396000f3606060405236156100cf5760e060020a600035046349eb2e6681146100d15780634bde38c8146100da5780636cf84fe1146100ec5780637502bd93146101275780637bd703e81461014e5780637f5097021461017957806390b98a11146101915780639a04f704146101c1578063a035b1fe146101d3578063aff0cb3c146101dc578063b563200c14610207578063d0e30db01461021e578063db7b64a814610227578063e0a73a9314610262578063f437bc591461026b578063f6ef7c091461027d578063f8b2cb4f14610295575b005b6102bb60075481565b6102cd600454600160a060020a031681565b6100cf60043560038054600160a060020a031916331790556002819055600154810160065560045461036790600160a060020a03168261019b565b6100cf60028054600154600780549190920192909204918201905560068054919091039055565b6102bb600435600073d32ec6dc3d4c69f80e3cdcd59cd5b93ba35056286396e4ee3d6103228461029c565b6100cf60048054600160a060020a031916331790555b565b6102bb6004356024355b33600160a060020a0316600090815260208190526040812054829010156102ea5761031c565b6102cd600354600160a060020a031681565b6102bb60015481565b6100cf60025460015460078054600a9290930160030291909104918201905560068054919091039055565b6100cf60058054600160a060020a03191633179055565b6102bb60065481565b6100cf60043560038054600160a060020a031916331790556001819055600254810160065560045461036790600160a060020a03168261019b565b6102bb60025481565b6102cd600554600160a060020a031681565b6100cf60045461036b90600160a060020a031661029c565b6102bb6004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b60408051600160a060020a03929092168252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506102b69050565b5050565b6006546007540114156103945760065460055461039991600160a060020a03919091169061019b565b610002565b506003546007546103b391600160a060020a03169061019b565b5061018f56",
+    unlinked_binary: "6060604052600160a060020a033216600090815260208190526040902061271090556103b98061002f6000396000f3606060405236156100cf5760e060020a600035046349eb2e6681146100d15780634bde38c8146100da5780636cf84fe1146100ec5780637502bd93146101275780637bd703e81461014e5780637f5097021461017957806390b98a11146101915780639a04f704146101c1578063a035b1fe146101d3578063aff0cb3c146101dc578063b563200c14610207578063d0e30db01461021e578063db7b64a814610227578063e0a73a9314610262578063f437bc591461026b578063f6ef7c091461027d578063f8b2cb4f14610295575b005b6102bb60075481565b6102cd600454600160a060020a031681565b6100cf60043560038054600160a060020a031916331790556002819055600154810160065560045461036790600160a060020a03168261019b565b6100cf60028054600154600780549190920192909204918201905560068054919091039055565b6102bb600435600073__ConvertLib____________________________6396e4ee3d6103228461029c565b6100cf60048054600160a060020a031916331790555b565b6102bb6004356024355b33600160a060020a0316600090815260208190526040812054829010156102ea5761031c565b6102cd600354600160a060020a031681565b6102bb60015481565b6100cf60025460015460078054600a9290930160030291909104918201905560068054919091039055565b6100cf60058054600160a060020a03191633179055565b6102bb60065481565b6100cf60043560038054600160a060020a031916331790556001819055600254810160065560045461036790600160a060020a03168261019b565b6102bb60025481565b6102cd600554600160a060020a031681565b6100cf60045461036b90600160a060020a031661029c565b6102bb6004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b60408051600160a060020a03929092168252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506102b69050565b5050565b6006546007540114156103945760065460055461039991600160a060020a03919091169061019b565b610002565b506003546007546103b391600160a060020a03169061019b565b5061018f56",
+    address: "0x039fd0e9da793d0f0375ff7dd9bc9eda4b128138",
     generated_with: "2.0.6",
     contract_name: "SmartAirbnb"
   };
@@ -5934,7 +5934,9 @@ var Pudding =
 
 
 var accounts;
-var account;
+var guest;
+var platform;
+var host;
 var balance;
 
 function moveScreen(step) {
@@ -5944,8 +5946,18 @@ function moveScreen(step) {
   return false;
 };
 
-function reserve() {
+function reserve(price) {
   // TODO integrate the contract
+  var airb = SmartAirbnb.deployed();
+
+  airb.Reserve(price, {from: guest})
+    .then(function() {
+      setStatus("Transaction complete!");
+      // TODO
+      refreshBalance();
+    })
+    .catch(function(e) { console.log(e)});
+
   moveScreen("#step2");
 };
 
@@ -5967,12 +5979,33 @@ function setStatus(message) {
   status.innerHTML = message;
 };
 
-function refreshBalance() {
-  var meta = MetaCoin.deployed();
+function setup() {
+  console.log('setup');
+  var airb = SmartAirbnb.deployed();
 
-  meta.getBalance.call(account, {from: account}).then(function(value) {
-    var balance_element = document.getElementById("balance");
+  airb.getBalance.call(guest, {from: guest})
+  .then(function(value) {
+    var balance_element = $("#guest .balance")[0];
     balance_element.innerHTML = value.valueOf();
+    console.log(value.valueOf());
+  })
+  .catch(function(e) {
+    console.log(e);
+    setStatus("Error getting balance; see log.");
+  });
+  airb.AddPlatform({from: platform})
+    .catch(function(e) { console.log(e)});
+  airb.AddHost({from: host})
+    .catch(function(e) { console.log(e)});
+};
+
+function refreshBalance() {
+  var airb = SmartAirbnb.deployed();
+
+  airb.getBalance.call(guest, {from: guest}).then(function(value) {
+    var balance_element = $("#guest .balance")[0];
+    balance_element.innerHTML = value.valueOf();
+    console.log(value.valueOf);
   }).catch(function(e) {
     console.log(e);
     setStatus("Error getting balance; see log.");
@@ -5987,7 +6020,7 @@ function sendCoin() {
 
   setStatus("Initiating transaction... (please wait)");
 
-  meta.sendCoin(receiver, amount, {from: account}).then(function() {
+  meta.sendCoin(receiver, amount, {from: guest}).then(function() {
     setStatus("Transaction complete!");
     refreshBalance();
   }).catch(function(e) {
@@ -6012,14 +6045,21 @@ window.onload = function() {
     }
 
     accounts = accs;
-    account = accounts[0];
+    guest     = accounts[0];
+    platform  = accounts[1];
+    host      = accounts[2];
 
-    refreshBalance();
+    setup();
   });
 
 
   $('form').on('submit', function(e){
     e.preventDefault();
+  });
+
+  $('.reserve').on('click', function() {
+    var price = $( this ).parents( ".card-content").find(".price span").text();
+    reserve(price);
   });
 }
 
@@ -6046,5 +6086,5 @@ if (typeof web3 !== 'undefined') {
 
 Pudding.setWeb3(window.web3);                                 
 
-Pudding.load([MetaCoin, ConvertLib, SmartAirbnb], window);               
+Pudding.load([ConvertLib, MetaCoin, SmartAirbnb], window);               
 

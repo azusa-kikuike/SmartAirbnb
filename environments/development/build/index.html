@@ -17,6 +17,23 @@
 <body>
   <div class="container">
     <h1>SmartAirbnb</h1>
+    <div id="debug">
+      <div id="status"></div>
+      <div class="balances">
+        <div id="guest">
+          <p>Guest</p>
+          <div class="balance">0</div>
+        </div>
+        <div id="host">
+          <p>Host</p>
+          <div class="balance">0</div>
+        </div>
+        <div id="platform">
+          <p>Platform</p>
+          <div class="balance">0</div>
+        </div>
+      </div>
+    </div>
     <h2 id="step1">Choose a room</h2>
     <div class="row">
       <div class="col s6 m4">
@@ -26,8 +43,9 @@
           </div>
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">Sokhna's guest room<i class="material-icons right">more_vert</i></span>
+            <p class="price">$<span>100</span></p>
             <p>
-              <button class="reserve waves-effect waves-light btn" onclick="reserve()">Choose</button>
+              <button class="reserve waves-effect waves-light btn">Choose</button>
             </p>
           </div>
           <div class="card-reveal">
@@ -43,8 +61,9 @@
           </div>
           <div class="card-content">
             <span class="card-title activator grey-text text-darken-4">Peiyi's guest room<i class="material-icons right">more_vert</i></span>
+            <p class="price">$<span>200</span></p>
             <p>
-              <button class="reserve waves-effect waves-light btn" onclick="reserve()">Choose</button>
+              <button class="reserve waves-effect waves-light btn">Choose</button>
             </p>
           </div>
           <div class="card-reveal">

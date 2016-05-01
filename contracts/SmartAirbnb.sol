@@ -12,6 +12,7 @@ contract SmartAirbnb is MetaCoin {
     function AddPlatform() {
         platform = msg.sender;
     }
+
     function AddHost() {
         host = msg.sender;
     }

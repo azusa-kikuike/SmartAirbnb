@@ -1,5 +1,7 @@
 var accounts;
-var account;
+var guest;
+var platform;
+var host;
 var balance;
 
 function moveScreen(step) {
@@ -9,8 +11,18 @@ function moveScreen(step) {
   return false;
 };
 
-function reserve() {
+function reserve(price) {
   // TODO integrate the contract
+  var airb = SmartAirbnb.deployed();
+
+  airb.Reserve(price, {from: guest})
+    .then(function() {
+      setStatus("Transaction complete!");
+      // TODO
+      refreshBalance();
+    })
+    .catch(function(e) { console.log(e)});
+
   moveScreen("#step2");
 };
 
@@ -32,12 +44,33 @@ function setStatus(message) {
   status.innerHTML = message;
 };
 
-function refreshBalance() {
-  var meta = MetaCoin.deployed();
+function setup() {
+  console.log('setup');
+  var airb = SmartAirbnb.deployed();
 
-  meta.getBalance.call(account, {from: account}).then(function(value) {
-    var balance_element = document.getElementById("balance");
+  airb.getBalance.call(guest, {from: guest})
+  .then(function(value) {
+    var balance_element = $("#guest .balance")[0];
     balance_element.innerHTML = value.valueOf();
+    console.log(value.valueOf());
+  })
+  .catch(function(e) {
+    console.log(e);
+    setStatus("Error getting balance; see log.");
+  });
+  airb.AddPlatform({from: platform})
+    .catch(function(e) { console.log(e)});
+  airb.AddHost({from: host})
+    .catch(function(e) { console.log(e)});
+};
+
+function refreshBalance() {
+  var airb = SmartAirbnb.deployed();
+
+  airb.getBalance.call(guest, {from: guest}).then(function(value) {
+    var balance_element = $("#guest .balance")[0];
+    balance_element.innerHTML = value.valueOf();
+    console.log(value.valueOf);
   }).catch(function(e) {
     console.log(e);
     setStatus("Error getting balance; see log.");
@@ -52,7 +85,7 @@ function sendCoin() {
 
   setStatus("Initiating transaction... (please wait)");
 
-  meta.sendCoin(receiver, amount, {from: account}).then(function() {
+  meta.sendCoin(receiver, amount, {from: guest}).then(function() {
     setStatus("Transaction complete!");
     refreshBalance();
   }).catch(function(e) {
@@ -77,13 +110,20 @@ window.onload = function() {
     }
 
     accounts = accs;
-    account = accounts[0];
+    guest     = accounts[0];
+    platform  = accounts[1];
+    host      = accounts[2];
 
-    refreshBalance();
+    setup();
   });
 
 
   $('form').on('submit', function(e){
     e.preventDefault();
+  });
+
+  $('.reserve').on('click', function() {
+    var price = $( this ).parents( ".card-content").find(".price span").text();
+    reserve(price);
   });
 }
