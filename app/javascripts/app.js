@@ -12,16 +12,14 @@ function moveScreen(step) {
 };
 
 function reserve(price) {
-  // TODO integrate the contract
   var airb = SmartAirbnb.deployed();
 
   airb.Reserve(price, {from: guest})
     .then(function() {
       setStatus("Transaction complete!");
-      // TODO
-      refreshBalance();
     })
     .catch(function(e) { console.log(e)});
+  refreshBalanceAll();
 
   moveScreen("#step2");
 };
@@ -62,20 +60,34 @@ function setup() {
     .catch(function(e) { console.log(e)});
   airb.AddHost({from: host})
     .catch(function(e) { console.log(e)});
+
+  refreshBalanceAll();
 };
 
-function refreshBalance() {
+function refreshBalance(member) {
   var airb = SmartAirbnb.deployed();
 
-  airb.getBalance.call(guest, {from: guest}).then(function(value) {
-    var balance_element = $("#guest .balance")[0];
+  airb.getBalance.call(member.value, {from: member.value}).then(function(value) {
+    var element_name = "#" + member.name + " .balance";
+    var balance_element = $(element_name)[0];
     balance_element.innerHTML = value.valueOf();
-    console.log(value.valueOf);
   }).catch(function(e) {
     console.log(e);
     setStatus("Error getting balance; see log.");
   });
 };
+
+function refreshBalanceAll() {
+  var airb = SmartAirbnb.deployed();
+  var members = [{ name: 'guest',
+                   value: guest}, 
+                 { name: 'platform',
+                   value: platform}, 
+                 { name: 'host',
+                   value : host}];
+
+  members.forEach(refreshBalance);
+}
 
 function sendCoin() {
   var meta = MetaCoin.deployed();
