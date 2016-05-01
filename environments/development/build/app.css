@@ -52,13 +52,17 @@ h3 {
 }
 
 .page {
-  height: 500px;
+  min-height: 500px;
 }
 
 #debug {
   position: fixed;
   top: 480px;
-  width: 70%;
+  width: 970px;
   height: 120px;
   z-index: 10;
+}
+
+header {
+  background-image: url("../images/header.jpg");
 }

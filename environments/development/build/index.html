@@ -4,6 +4,7 @@
 <html>
 <head>
   <title>MetaCoin - Default Truffle App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <link href="./app.css" rel='stylesheet' type='text/css'>
   <!-- jQuery -->
@@ -12,23 +13,31 @@
   <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="./app.js"></script>
 </head>
 <body>
   <div class="container">
-    <h1>SmartAirbnb</h1>
-
     <div class="page">
-      <h2 id="step1">Choose a room</h2>
+      <header class="jumbotron">
+        <h1>SmartAirbnb</h1>
+      </header>
+
+      <hr class="grayhr">
+      <h2 id="step1" class="title">Choose a room</h2>
+      <hr class="grayhr">
+
       <div class="row">
-        <div class="col s6 m4">
+        <div class="col s12 m4">
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="images/image1.jpg">
+              <img class="activator" src="images/image1.jpg" class="img-responsive" style="height:356px">
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Sokhna's guest room<i class="material-icons right">more_vert</i></span>
-              <p class="price">$<span>100</span></p>
+              <!--<p class="price">$<span>100</span></p>-->
+              <div class="card-title activator grey-text text-darken-4 price">$<span>100</span></div>
               <p>
                 <button class="reserve waves-effect waves-light btn">Choose</button>
               </p>
@@ -39,15 +48,34 @@
             </div>
           </div>
         </div>
-        <div class="col s6 m4">
+        <div class="col s12 m4">
           <div class="card">
             <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="images/image2.jpg">
+              <img class="activator" src="images/image2.jpg" class="img-responsive" style="height:356px">
             </div>
             <div class="card-content">
               <span class="card-title activator grey-text text-darken-4">Peiyi's guest room<i class="material-icons right">more_vert</i></span>
               <p class="price">$<span>200</span></p>
               <p>
+              <div class="card-title activator grey-text text-darken-4 price">$<span>150</span></div>
+              <button class="reserve waves-effect waves-light btn" onclick="reserve()">Choose</button>
+            </p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title grey-text text-darken-4">Peiyi's guest room<i class="material-icons right">close</i></span>
+            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="images/image3.jpg" class="img-responsive" style="height:356px">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4">Jack's guest room<i class="material-icons right">more_vert</i></span>
+            <p>
+              <div class="card-title activator grey-text text-darken-4 price">$<span>200</span></div>
                 <button class="reserve waves-effect waves-light btn">Choose</button>
               </p>
             </div>
@@ -61,7 +89,42 @@
     </div>
 
     <div class="page">
+      <hr class="grayhr">
       <h2 id="step2">Choose guarantee option</h2>
+      <hr class="grayhr">
+      <div class="row">
+        <div class="col s12 m3">
+          <input type="checkbox" id="test5" />
+          <label for="test5">Hi-Speed Wifi (+10%)</label>
+        </div>
+        <div class="col s12 m3">
+          <input type="checkbox" id="test6" checked="checked" />
+          <label for="test6">No Insects (+10%)</label>
+        </div>
+        <div class="col s12 m3">
+          <input type="checkbox" id="test8" />
+          <label for="test8 ">Air conditioner (+10%)</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12 m3">
+          <input type="checkbox" id="test5" />
+          <label for="test5">No Wifi (-50%)</label>
+        </div>
+        <div class="col s12 m3">
+          <input type="checkbox" id="test6" />
+          <label for="test6">Exist Insects (-30%)</label>
+        </div>
+        <div class="col s12 m3">
+          <input type="checkbox" id="test8" />
+          <label for="test8 ">No air conditioner (-10%)</label>
+        </div>
+        <div class="col s12 m3 ">
+          <button class="waves-effect waves-light btn " onclick="addPremium() ">Choose</button>
+        </div>
+      </div>
+    </div>
+      <!--
       <form class="premium" action="#">
         <p>
           <input type="checkbox" id="test5" />
@@ -80,10 +143,12 @@
           <button class="waves-effect waves-light btn">Choose</button>
         </p>
       </form>
-    </div>
+      -->
 
     <div class="page">
+      <hr class="grayhr">
       <h2 id="step3">Reservation confirmed!</h2>
+      <hr class="grayhr">
       <p>We're looking forward to meet you!</p>
       <p>
         <button class="step4 waves-effect waves-light btn" onclick="moveScreen('#step4')">Next</button>
@@ -91,7 +156,9 @@
     </div>
 
     <div class="page">
+      <hr class="grayhr">
       <h2 id="step4">Report the problem</h2>
+      <hr class="grayhr">
 
       <form class="col s12 problem" action="#">
         <div class="row">
@@ -107,10 +174,12 @@
     </div>
 
     <div class="page">
-    <h2 id="step5">LeaveRoom</h2>
-    <p>
-      <button class="leaveRoom waves-effect waves-light btn" onclick="leaveRoom()">Finish the contract</button>
-    </p>
+      <hr class="grayhr">
+      <h2 id="step5">LeaveRoom</h2>
+      <hr class="grayhr">
+      <p>
+        <button class="leaveRoom waves-effect waves-light btn" onclick="leaveRoom()">Finish the contract</button>
+      </p>
     </div>
 
     <div id="debug" class="brown lighten-3">
@@ -133,26 +202,5 @@
     </div>
 
   </div>
-
-
-
-  <div class="section">
-    Contract deployed at: <div id="confAddress"></div>
-  </div>
-
-
-
-
-  <h1>MetaCoin</h1>
-  <h2>Example Truffle Dapp</h2>
-  <h3>You have <span class="black"><span id="balance"></span> META</span></h3>
-
-  <br>
-  <h1>Send</h1>
-  <br><label for="amount">Amount:</label><input type="text" id="amount" placeholder="e.g., 95"></input>
-  <br><label for="receiver">To Address:</label><input type="text" id="receiver" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input>
-  <br><br><button id="send" onclick="sendCoin()">Send MetaCoin</button>
-  <br><br>
-  <span id="status"></span>
 </body>
 </html>
