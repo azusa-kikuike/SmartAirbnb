@@ -35,7 +35,7 @@ function addPremium() {
   moveScreen("#step3");
 };
 
-function noWifi() {
+function problem() {
   moveScreen("#step5");
 };
 
@@ -138,7 +138,14 @@ window.onload = function() {
 
   $('form').on('submit', function(e){
     e.preventDefault();
+  });
+
+  $('form.premium').on('submit', function(e){
     addPremium();
+  });
+
+  $('form.problem').on('submit', function(e){
+    problem();
   });
 
   $('.reserve').on('click', function() {

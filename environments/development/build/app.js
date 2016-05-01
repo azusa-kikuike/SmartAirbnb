@@ -5735,17 +5735,17 @@ var Pudding =
 (function() {
 
   var contract_data = {
-    abi: [{"constant":false,"inputs":[{"name":"amount","type":"uint256"},{"name":"conversionRate","type":"uint256"}],"name":"convert","outputs":[{"name":"convertedAmount","type":"uint256"}],"type":"function"}],
-    binary: "606060405260358060106000396000f3650301c67926cf50606060405260e060020a600035046396e4ee3d81146024575b6007565b602435600435026060908152602090f3",
-    unlinked_binary: "606060405260358060106000396000f3650301c67926cf50606060405260e060020a600035046396e4ee3d81146024575b6007565b602435600435026060908152602090f3",
-    address: "0x7ba95a1d4e604798775cbbdac6cd4eda0e1bb8d5",
+    abi: [{"constant":true,"inputs":[],"name":"kickback","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"platform","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"AddPremium","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"FindBug","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalanceInEth","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"AddPlatform","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"receiver","type":"address"},{"name":"amount","type":"uint256"}],"name":"sendCoin","outputs":[{"name":"sufficient","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"guest","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"price","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"NoWifi","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"AddHost","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"deposit","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"Reserve","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"premium","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"host","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"LeaveRoom","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalance","outputs":[{"name":"","type":"uint256"}],"type":"function"}],
+    binary: "6060604052600160a060020a033216600090815260208190526040902061271090556103b98061002f6000396000f3606060405236156100cf5760e060020a600035046349eb2e6681146100d15780634bde38c8146100da5780636cf84fe1146100ec5780637502bd93146101275780637bd703e81461014e5780637f5097021461017957806390b98a11146101915780639a04f704146101c1578063a035b1fe146101d3578063aff0cb3c146101dc578063b563200c14610207578063d0e30db01461021e578063db7b64a814610227578063e0a73a9314610262578063f437bc591461026b578063f6ef7c091461027d578063f8b2cb4f14610295575b005b6102bb60075481565b6102cd600454600160a060020a031681565b6100cf60043560038054600160a060020a031916331790556002819055600154810160065560045461036790600160a060020a03168261019b565b6100cf60028054600154600780549190920192909204918201905560068054919091039055565b6102bb6004356000737ba95a1d4e604798775cbbdac6cd4eda0e1bb8d56396e4ee3d6103228461029c565b6100cf60048054600160a060020a031916331790555b565b6102bb6004356024355b33600160a060020a0316600090815260208190526040812054829010156102ea5761031c565b6102cd600354600160a060020a031681565b6102bb60015481565b6100cf60025460015460078054600a9290930160030291909104918201905560068054919091039055565b6100cf60058054600160a060020a03191633179055565b6102bb60065481565b6100cf60043560038054600160a060020a031916331790556001819055600254810160065560045461036790600160a060020a03168261019b565b6102bb60025481565b6102cd600554600160a060020a031681565b6100cf60045461036b90600160a060020a031661029c565b6102bb6004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b60408051600160a060020a03929092168252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506102b69050565b5050565b6006546007540114156103945760065460055461039991600160a060020a03919091169061019b565b610002565b506003546007546103b391600160a060020a03169061019b565b5061018f56",
+    unlinked_binary: "6060604052600160a060020a033216600090815260208190526040902061271090556103b98061002f6000396000f3606060405236156100cf5760e060020a600035046349eb2e6681146100d15780634bde38c8146100da5780636cf84fe1146100ec5780637502bd93146101275780637bd703e81461014e5780637f5097021461017957806390b98a11146101915780639a04f704146101c1578063a035b1fe146101d3578063aff0cb3c146101dc578063b563200c14610207578063d0e30db01461021e578063db7b64a814610227578063e0a73a9314610262578063f437bc591461026b578063f6ef7c091461027d578063f8b2cb4f14610295575b005b6102bb60075481565b6102cd600454600160a060020a031681565b6100cf60043560038054600160a060020a031916331790556002819055600154810160065560045461036790600160a060020a03168261019b565b6100cf60028054600154600780549190920192909204918201905560068054919091039055565b6102bb600435600073__ConvertLib____________________________6396e4ee3d6103228461029c565b6100cf60048054600160a060020a031916331790555b565b6102bb6004356024355b33600160a060020a0316600090815260208190526040812054829010156102ea5761031c565b6102cd600354600160a060020a031681565b6102bb60015481565b6100cf60025460015460078054600a9290930160030291909104918201905560068054919091039055565b6100cf60058054600160a060020a03191633179055565b6102bb60065481565b6100cf60043560038054600160a060020a031916331790556001819055600254810160065560045461036790600160a060020a03168261019b565b6102bb60025481565b6102cd600554600160a060020a031681565b6100cf60045461036b90600160a060020a031661029c565b6102bb6004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b60408051600160a060020a03929092168252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506102b69050565b5050565b6006546007540114156103945760065460055461039991600160a060020a03919091169061019b565b610002565b506003546007546103b391600160a060020a03169061019b565b5061018f56",
+    address: "0xfbdda25bcf5834b2b609ab73d1d4a89ecd2f5de5",
     generated_with: "2.0.6",
-    contract_name: "ConvertLib"
+    contract_name: "SmartAirbnb"
   };
 
   function Contract() {
     if (Contract.Pudding == null) {
-      throw new Error("ConvertLib error: Please call load() first before creating new instance of this contract.");
+      throw new Error("SmartAirbnb error: Please call load() first before creating new instance of this contract.");
     }
 
     Contract.Pudding.apply(this, arguments);
@@ -5762,7 +5762,7 @@ var Pudding =
 
   Contract.new = function() {
     if (Contract.Pudding == null) {
-      throw new Error("ConvertLib error: Please call load() first before calling new().");
+      throw new Error("SmartAirbnb error: Please call load() first before calling new().");
     }
 
     return Contract.Pudding.new.apply(Contract, arguments);
@@ -5770,7 +5770,7 @@ var Pudding =
 
   Contract.at = function() {
     if (Contract.Pudding == null) {
-      throw new Error("ConvertLib error: lease call load() first before calling at().");
+      throw new Error("SmartAirbnb error: lease call load() first before calling at().");
     }
 
     return Contract.Pudding.at.apply(Contract, arguments);
@@ -5778,7 +5778,7 @@ var Pudding =
 
   Contract.deployed = function() {
     if (Contract.Pudding == null) {
-      throw new Error("ConvertLib error: Please call load() first before calling deployed().");
+      throw new Error("SmartAirbnb error: Please call load() first before calling deployed().");
     }
 
     return Contract.Pudding.deployed.apply(Contract, arguments);
@@ -5789,7 +5789,7 @@ var Pudding =
   } else {
     // There will only be one version of Pudding in the browser,
     // and we can use that.
-    window.ConvertLib = Contract;
+    window.SmartAirbnb = Contract;
   }
 
 })();
@@ -5869,17 +5869,17 @@ var Pudding =
 (function() {
 
   var contract_data = {
-    abi: [{"constant":true,"inputs":[],"name":"kickback","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"platform","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"AddPremium","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"FindBug","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalanceInEth","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"AddPlatform","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"receiver","type":"address"},{"name":"amount","type":"uint256"}],"name":"sendCoin","outputs":[{"name":"sufficient","type":"bool"}],"type":"function"},{"constant":true,"inputs":[],"name":"guest","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":true,"inputs":[],"name":"price","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[],"name":"NoWifi","outputs":[],"type":"function"},{"constant":false,"inputs":[],"name":"AddHost","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"deposit","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":false,"inputs":[{"name":"amount","type":"uint256"}],"name":"Reserve","outputs":[],"type":"function"},{"constant":true,"inputs":[],"name":"premium","outputs":[{"name":"","type":"uint256"}],"type":"function"},{"constant":true,"inputs":[],"name":"host","outputs":[{"name":"","type":"address"}],"type":"function"},{"constant":false,"inputs":[],"name":"LeaveRoom","outputs":[],"type":"function"},{"constant":false,"inputs":[{"name":"addr","type":"address"}],"name":"getBalance","outputs":[{"name":"","type":"uint256"}],"type":"function"}],
-    binary: "6060604052600160a060020a033216600090815260208190526040902061271090556103b98061002f6000396000f3606060405236156100cf5760e060020a600035046349eb2e6681146100d15780634bde38c8146100da5780636cf84fe1146100ec5780637502bd93146101275780637bd703e81461014e5780637f5097021461017957806390b98a11146101915780639a04f704146101c1578063a035b1fe146101d3578063aff0cb3c146101dc578063b563200c14610207578063d0e30db01461021e578063db7b64a814610227578063e0a73a9314610262578063f437bc591461026b578063f6ef7c091461027d578063f8b2cb4f14610295575b005b6102bb60075481565b6102cd600454600160a060020a031681565b6100cf60043560038054600160a060020a031916331790556002819055600154810160065560045461036790600160a060020a03168261019b565b6100cf60028054600154600780549190920192909204918201905560068054919091039055565b6102bb6004356000737ba95a1d4e604798775cbbdac6cd4eda0e1bb8d56396e4ee3d6103228461029c565b6100cf60048054600160a060020a031916331790555b565b6102bb6004356024355b33600160a060020a0316600090815260208190526040812054829010156102ea5761031c565b6102cd600354600160a060020a031681565b6102bb60015481565b6100cf60025460015460078054600a9290930160030291909104918201905560068054919091039055565b6100cf60058054600160a060020a03191633179055565b6102bb60065481565b6100cf60043560038054600160a060020a031916331790556001819055600254810160065560045461036790600160a060020a03168261019b565b6102bb60025481565b6102cd600554600160a060020a031681565b6100cf60045461036b90600160a060020a031661029c565b6102bb6004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b60408051600160a060020a03929092168252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506102b69050565b5050565b6006546007540114156103945760065460055461039991600160a060020a03919091169061019b565b610002565b506003546007546103b391600160a060020a03169061019b565b5061018f56",
-    unlinked_binary: "6060604052600160a060020a033216600090815260208190526040902061271090556103b98061002f6000396000f3606060405236156100cf5760e060020a600035046349eb2e6681146100d15780634bde38c8146100da5780636cf84fe1146100ec5780637502bd93146101275780637bd703e81461014e5780637f5097021461017957806390b98a11146101915780639a04f704146101c1578063a035b1fe146101d3578063aff0cb3c146101dc578063b563200c14610207578063d0e30db01461021e578063db7b64a814610227578063e0a73a9314610262578063f437bc591461026b578063f6ef7c091461027d578063f8b2cb4f14610295575b005b6102bb60075481565b6102cd600454600160a060020a031681565b6100cf60043560038054600160a060020a031916331790556002819055600154810160065560045461036790600160a060020a03168261019b565b6100cf60028054600154600780549190920192909204918201905560068054919091039055565b6102bb600435600073__ConvertLib____________________________6396e4ee3d6103228461029c565b6100cf60048054600160a060020a031916331790555b565b6102bb6004356024355b33600160a060020a0316600090815260208190526040812054829010156102ea5761031c565b6102cd600354600160a060020a031681565b6102bb60015481565b6100cf60025460015460078054600a9290930160030291909104918201905560068054919091039055565b6100cf60058054600160a060020a03191633179055565b6102bb60065481565b6100cf60043560038054600160a060020a031916331790556001819055600254810160065560045461036790600160a060020a03168261019b565b6102bb60025481565b6102cd600554600160a060020a031681565b6100cf60045461036b90600160a060020a031661029c565b6102bb6004355b600160a060020a0381166000908152602081905260409020545b919050565b60408051918252519081900360200190f35b60408051600160a060020a03929092168252519081900360200190f35b5033600160a060020a039081166000908152602081905260408082208054859003905591841681522080548201905560015b92915050565b60026040518360e060020a02815260040180838152602001828152602001925050506020604051808303818660325a03f4156100025750506040515191506102b69050565b5050565b6006546007540114156103945760065460055461039991600160a060020a03919091169061019b565b610002565b506003546007546103b391600160a060020a03169061019b565b5061018f56",
-    address: "0xfbdda25bcf5834b2b609ab73d1d4a89ecd2f5de5",
+    abi: [{"constant":false,"inputs":[{"name":"amount","type":"uint256"},{"name":"conversionRate","type":"uint256"}],"name":"convert","outputs":[{"name":"convertedAmount","type":"uint256"}],"type":"function"}],
+    binary: "606060405260358060106000396000f3650301c67926cf50606060405260e060020a600035046396e4ee3d81146024575b6007565b602435600435026060908152602090f3",
+    unlinked_binary: "606060405260358060106000396000f3650301c67926cf50606060405260e060020a600035046396e4ee3d81146024575b6007565b602435600435026060908152602090f3",
+    address: "0x7ba95a1d4e604798775cbbdac6cd4eda0e1bb8d5",
     generated_with: "2.0.6",
-    contract_name: "SmartAirbnb"
+    contract_name: "ConvertLib"
   };
 
   function Contract() {
     if (Contract.Pudding == null) {
-      throw new Error("SmartAirbnb error: Please call load() first before creating new instance of this contract.");
+      throw new Error("ConvertLib error: Please call load() first before creating new instance of this contract.");
     }
 
     Contract.Pudding.apply(this, arguments);
@@ -5896,7 +5896,7 @@ var Pudding =
 
   Contract.new = function() {
     if (Contract.Pudding == null) {
-      throw new Error("SmartAirbnb error: Please call load() first before calling new().");
+      throw new Error("ConvertLib error: Please call load() first before calling new().");
     }
 
     return Contract.Pudding.new.apply(Contract, arguments);
@@ -5904,7 +5904,7 @@ var Pudding =
 
   Contract.at = function() {
     if (Contract.Pudding == null) {
-      throw new Error("SmartAirbnb error: lease call load() first before calling at().");
+      throw new Error("ConvertLib error: lease call load() first before calling at().");
     }
 
     return Contract.Pudding.at.apply(Contract, arguments);
@@ -5912,7 +5912,7 @@ var Pudding =
 
   Contract.deployed = function() {
     if (Contract.Pudding == null) {
-      throw new Error("SmartAirbnb error: Please call load() first before calling deployed().");
+      throw new Error("ConvertLib error: Please call load() first before calling deployed().");
     }
 
     return Contract.Pudding.deployed.apply(Contract, arguments);
@@ -5923,7 +5923,7 @@ var Pudding =
   } else {
     // There will only be one version of Pudding in the browser,
     // and we can use that.
-    window.SmartAirbnb = Contract;
+    window.ConvertLib = Contract;
   }
 
 })();
@@ -5970,7 +5970,7 @@ function addPremium() {
   moveScreen("#step3");
 };
 
-function noWifi() {
+function problem() {
   moveScreen("#step5");
 };
 
@@ -6073,7 +6073,14 @@ window.onload = function() {
 
   $('form').on('submit', function(e){
     e.preventDefault();
+  });
+
+  $('form.premium').on('submit', function(e){
     addPremium();
+  });
+
+  $('form.problem').on('submit', function(e){
+    problem();
   });
 
   $('.reserve').on('click', function() {
@@ -6105,5 +6112,5 @@ if (typeof web3 !== 'undefined') {
 
 Pudding.setWeb3(window.web3);                                 
 
-Pudding.load([ConvertLib, MetaCoin, SmartAirbnb], window);               
+Pudding.load([SmartAirbnb, MetaCoin, ConvertLib], window);               
 

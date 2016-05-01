@@ -62,7 +62,7 @@
 
     <div class="page">
       <h2 id="step2">Choose guarantee option</h2>
-      <form id="form-premium" action="#">
+      <form class="premium" action="#">
         <p>
           <input type="checkbox" id="test5" />
           <label for="test5">Hi-Speed Wifi
@@ -92,9 +92,18 @@
 
     <div class="page">
       <h2 id="step4">Report the problem</h2>
-      <p>
-        <button class="noWifi waves-effect waves-light btn" onclick="noWifi()">Report</button>
-      </p>
+
+      <form class="col s12 problem" action="#">
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea"></textarea>
+            <label for="textarea1">Tell me your problem</label>
+          </div>
+        </div>
+        <p>
+          <button class="noWifi waves-effect waves-light btn" onclick="noWifi()">Report</button>
+        </p>
+      </form>
     </div>
 
     <div class="page">
