@@ -1,6 +1,7 @@
 var accounts;
 var account;
 var balance;
+var price=0;
 
 function moveScreen(step) {
   // TODO integrate the contract

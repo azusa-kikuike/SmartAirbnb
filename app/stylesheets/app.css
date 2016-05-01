@@ -46,3 +46,7 @@ h3 {
 #balance {
   color: black;
 }
+
+header {
+  background-image: url("../images/header.jpg");
+}
