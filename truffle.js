@@ -11,7 +11,8 @@ module.exports = {
   },
   deploy: [
     "MetaCoin",
-    "ConvertLib"
+    "ConvertLib",
+    "SmartAirbnb"
   ],
   rpc: {
     host: "localhost",
