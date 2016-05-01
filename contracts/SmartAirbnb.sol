@@ -1,22 +1,21 @@
 import "MetaCoin.sol";
 
 contract SmartAirbnb is MetaCoin {
-    uint public value;
+    uint public price;
     uint public premium;
-    address public host;
     address public guest;
-    address public platform;
+    address public host;
     uint public deposit;
     uint public kickback;
     address metacoin;
 
     function SmartAirbnb() {
-//        metacoin = new MetaCoin();
-    }    
+        address public platform;
+    }
 
     function Reserve(uint amount) {
         guest = msg.sender;
-        value = amount;
+        price = amount;
 
 //        metacoin.sendCoin(platform, amount);
         sendCoin(platform, amount);
@@ -31,16 +30,16 @@ contract SmartAirbnb is MetaCoin {
     }
 
     function FindBug() {
-        kickback += ((value + premium) / 2);
-        deposit  -= ((value + premium) / 2);
+        kickback += ((price + premium) / 2);
+        deposit  -= ((price + premium) / 2);
     }
     
-    function HotShower() {
-        kickback += ((value + premium) * 3/10);
-        deposit  -= ((value + premium) * 3/10);
+    function NoWifi() {
+        kickback += ((price + premium) * 3/10);
+        deposit  -= ((price + premium) * 3/10);
     }
     
-    function leaveRoom() {
+    function LeaveRoom() {
         if (kickback + deposit == getBalance(platform)) {
             sendCoin(host, deposit);
             sendCoin(guest, kickback);
