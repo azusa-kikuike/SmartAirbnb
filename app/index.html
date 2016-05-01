@@ -15,104 +15,113 @@
 <body>
   <div class="container">
     <h1>SmartAirbnb</h1>
-    <div id="debug">
-      <div id="status"></div>
-      <div class="balances">
-        <div id="guest">
-          <p>Guest</p>
-          <div class="balance">0</div>
-        </div>
-        <div id="host">
-          <p>Host</p>
-          <div class="balance">0</div>
-        </div>
-        <div id="platform">
-          <p>Platform</p>
-          <div class="balance">0</div>
-        </div>
-      </div>
-    </div>
-    <h2 id="step1">Choose a room</h2>
-    <div class="row">
-      <div class="col s6 m4">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="images/image1.jpg">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Sokhna's guest room<i class="material-icons right">more_vert</i></span>
-            <p class="price">$<span>100</span></p>
-            <p>
-              <button class="reserve waves-effect waves-light btn">Choose</button>
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Sokhna's guest room<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+
+    <div class="page">
+      <h2 id="step1">Choose a room</h2>
+      <div class="row">
+        <div class="col s6 m4">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/image1.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Sokhna's guest room<i class="material-icons right">more_vert</i></span>
+              <p class="price">$<span>100</span></p>
+              <p>
+                <button class="reserve waves-effect waves-light btn">Choose</button>
+              </p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Sokhna's guest room<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col s6 m4">
-        <div class="card">
-          <div class="card-image waves-effect waves-block waves-light">
-            <img class="activator" src="images/image2.jpg">
-          </div>
-          <div class="card-content">
-            <span class="card-title activator grey-text text-darken-4">Peiyi's guest room<i class="material-icons right">more_vert</i></span>
-            <p class="price">$<span>200</span></p>
-            <p>
-              <button class="reserve waves-effect waves-light btn">Choose</button>
-            </p>
-          </div>
-          <div class="card-reveal">
-            <span class="card-title grey-text text-darken-4">Peiyi's guest room<i class="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        <div class="col s6 m4">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/image2.jpg">
+            </div>
+            <div class="card-content">
+              <span class="card-title activator grey-text text-darken-4">Peiyi's guest room<i class="material-icons right">more_vert</i></span>
+              <p class="price">$<span>200</span></p>
+              <p>
+                <button class="reserve waves-effect waves-light btn">Choose</button>
+              </p>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Peiyi's guest room<i class="material-icons right">close</i></span>
+              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <h2 id="step2">Choose guarantee option</h2>
-    <form id="form-premium" action="#">
-      <p>
-        <input type="checkbox" id="test5" />
-        <label for="test5">Hi-Speed Wifi
-        </label>
-        <p>Guarantee fee:<span>+10%</span></p>
-        <p>Otherwise:<span>-30%</span></p>
-      </p>
-      <p>
-        <input type="checkbox" id="test6" disabled="disabled" />
-        <label for="test6">No Bugs</label>
-        <p>Guarantee fee:<span>+10%</span></p>
-        <p>Otherwise:<span>-50%</span></p>
-      </p>
-      <p>
-        <button class="waves-effect waves-light btn" onclick="addPremium()">Choose</button>
-      </p>
-    </form>
+    <div class="page">
+      <h2 id="step2">Choose guarantee option</h2>
+      <form id="form-premium" action="#">
+        <p>
+          <input type="checkbox" id="test5" />
+          <label for="test5">Hi-Speed Wifi
+          </label>
+          <p>Guarantee fee:<span>+10%</span></p>
+          <p>Otherwise:<span>-30%</span></p>
+        </p>
+        <p>
+          <input type="checkbox" id="test6" disabled="disabled" />
+          <label for="test6">No Bugs</label>
+          <p>Guarantee fee:<span>+10%</span></p>
+          <p>Otherwise:<span>-50%</span></p>
+        </p>
+        <p>
+          <button class="waves-effect waves-light btn">Choose</button>
+        </p>
+      </form>
+    </div>
 
-    <h2 id="step3">Reservation confirmed!</h2>
+    <div class="page">
+      <h2 id="step3">Reservation confirmed!</h2>
+      <p>We're looking forward to meet you!</p>
       <p>
-        <button class="step4 waves-effect waves-light btn" onclick="moveScreen('#step4')">Choose</button>
+        <button class="step4 waves-effect waves-light btn" onclick="moveScreen('#step4')">Next</button>
       </p>
+    </div>
 
-    <h2 id="step4">Report the problem</h2>
+    <div class="page">
+      <h2 id="step4">Report the problem</h2>
+      <p>
+        <button class="noWifi waves-effect waves-light btn" onclick="noWifi()">Report</button>
+      </p>
+    </div>
 
-    <p>
-      <button class="noWifi waves-effect waves-light btn" onclick="noWifi()">Report</button>
-    </p>
-
+    <div class="page">
     <h2 id="step5">LeaveRoom</h2>
-
     <p>
       <button class="leaveRoom waves-effect waves-light btn" onclick="leaveRoom()">Finish the contract</button>
     </p>
+    </div>
+
+    <div id="debug" class="brown lighten-3">
+      <span><b>Debug</b></span>
+      <div id="status"></div>
+      <div class="balances">
+        <div id="guest">
+          <span>Guest</span>
+          <span class="balance">0</span>
+        </div>
+        <div id="host">
+          <span>Host</span>
+          <span class="balance">0</span>
+        </div>
+        <div id="platform">
+          <span>Platform</span>
+          <span class="balance">0</span>
+        </div>
+      </div>
+    </div>
 
   </div>
-
-
-
 
 
 

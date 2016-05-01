@@ -5961,6 +5961,12 @@ function reserve(price) {
 
 function addPremium() {
   // TODO integrate the contract
+  var airb = SmartAirbnb.deployed();
+  var premium = 10;
+
+  airb.AddPremium(premium, {from: guest})
+    .catch(function(e) { console.log(e) });
+  refreshBalanceAll();
   moveScreen("#step3");
 };
 
@@ -6067,6 +6073,7 @@ window.onload = function() {
 
   $('form').on('submit', function(e){
     e.preventDefault();
+    addPremium();
   });
 
   $('.reserve').on('click', function() {
