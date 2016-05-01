@@ -36,11 +36,18 @@ function addPremium() {
 };
 
 function problem() {
+  var airb = SmartAirbnb.deployed();
+  airb.FindBug({from: platform})
+    .catch(function(e) { console.log(e) });
+  refreshBalanceAll();
   moveScreen("#step5");
 };
 
 function leaveRoom() {
-  return false;
+  var airb = SmartAirbnb.deployed();
+  airb.LeaveRoom({from: platform})
+    .catch(function(e) { console.log(e) });
+  refreshBalanceAll();
 };
 
 function setStatus(message) {

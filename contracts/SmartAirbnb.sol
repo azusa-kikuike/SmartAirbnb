@@ -15,6 +15,8 @@ contract SmartAirbnb is MetaCoin {
 
     function AddHost() {
         host = msg.sender;
+        deposit   = 0;
+        kickback  = 0;
     }
 
     function Reserve(uint amount) {
@@ -34,21 +36,17 @@ contract SmartAirbnb is MetaCoin {
     }
 
     function FindBug() {
-        kickback += ((price + premium) / 2);
-        deposit  -= ((price + premium) / 2);
-    }
-    
-    function NoWifi() {
         kickback += ((price + premium) * 3/10);
         deposit  -= ((price + premium) * 3/10);
     }
     
+    function NoWifi() {
+        kickback += ((price + premium) / 2);
+        deposit  -= ((price + premium) / 2);
+    }
+    
     function LeaveRoom() {
-        if (kickback + deposit == getBalance(platform)) {
-            sendCoin(host, deposit);
-            sendCoin(guest, kickback);
-        } else {
-            throw;
-        }
+        sendCoin(guest, 33);
+        sendCoin(host, 77);
     }
 }
